@@ -3,7 +3,7 @@ import { Box, Divider, NavLink } from "@mantine/core";
 import { RiFolderUserFill } from "react-icons/ri";
 import { MdOutlineFamilyRestroom } from "react-icons/md";
 import { FaHouseUser } from "react-icons/fa6";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { useSelector } from "react-redux";
 import Logout from "../buttons/Logout";

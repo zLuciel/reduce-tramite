@@ -8,11 +8,7 @@ import { RiFolderUserFill } from "react-icons/ri";
 import { FaHouseUser } from "react-icons/fa6";
 import { MdOutlineFamilyRestroom } from "react-icons/md";
 import { useProduct } from "@/provider/ProviderContext";
-import {
-  BsCalendar2CheckFill,
-  BsCalendar2DateFill,
-  BsCalendarXFill,
-} from "react-icons/bs";
+import { BsCalendar2CheckFill, BsCalendar2DateFill } from "react-icons/bs";
 
 import Logout from "../buttons/Logout";
 
@@ -48,9 +44,8 @@ const followNav = [
 ];
 
 const NewHeaderDashboard = ({ Followid }) => {
-  const { user, setDocumentSection, documentSection } = useProduct();
+  const { documentSection } = useProduct();
   const [countProcess, setCountProcess] = useState(0);
-  const [countPendient, setCountPendient] = useState(0);
   const pathname = usePathname();
   const arrayPathname = pathname.split("/");
   const slug = arrayPathname[arrayPathname.length - 1];
@@ -293,12 +288,6 @@ const NewHeaderDashboard = ({ Followid }) => {
 
       <div className="w-full">
         <div className="w-full">
-          {/* <Divider
-              className="lista-user-diver"
-              my="md"
-              label={<Link href={"/dashboard"}>LISTA USUARIOS</Link>}
-              labelPosition="center"
-            /> */}
           <Logout />
         </div>
       </div>

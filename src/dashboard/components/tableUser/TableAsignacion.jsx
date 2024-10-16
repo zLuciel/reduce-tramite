@@ -19,7 +19,7 @@ export default function TableAsignacion({ allUser, dataSelect, nameSection }) {
   React.useEffect(() => {
     const formattedUsers = allUser.map((user) => ({
       ...user,
-      dni:user.mobileNumber,
+      dni: user.mobileNumber,
       id: user.id,
       firstName: user.firstName?.toUpperCase() || "",
       lastName: user.lastName?.toUpperCase() || "",
@@ -176,8 +176,18 @@ export default function TableAsignacion({ allUser, dataSelect, nameSection }) {
     },
     { field: "dni", headerName: "DNI", width: 150, editable: false },
     { field: "firstName", headerName: "Nombres", width: 150, editable: false },
-    { field: "apellido_paterno", headerName: "Apellidos Paterno", width: 150, editable: false },
-    { field: "apellido_materno", headerName: "Apellidos Materno", width: 150, editable: false },
+    {
+      field: "apellido_paterno",
+      headerName: "Apellidos Paterno",
+      width: 150,
+      editable: false,
+    },
+    {
+      field: "apellido_materno",
+      headerName: "Apellidos Materno",
+      width: 150,
+      editable: false,
+    },
     {
       field: "address",
       headerName: "Direción",

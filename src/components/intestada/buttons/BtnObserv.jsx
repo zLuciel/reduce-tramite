@@ -6,17 +6,13 @@ import { useProduct } from "@/provider/ProviderContext";
 import { notifications } from "@mantine/notifications";
 import { FaFilePdf } from "react-icons/fa";
 
-const BtnObserv = ({ idFile, setStateFile, stateFile, nameDocumet,setRefresh,refresh }) => {
+const BtnObserv = ({ idFile,setRefresh,refresh }) => {
   const { user } = useProduct();
-  const [files, setFiles] = useState([]);
- 
-  
 
   const handleObservado = async (file) => {
     if (file.type === "application/pdf") {
       try {
         const res = await dataApi.updateFile(user.token, file, idFile, true);
-        console.log(res,"viendo pdf");
           
         if (res.fileUrl) {
           notifications.show({
@@ -38,7 +34,6 @@ const BtnObserv = ({ idFile, setStateFile, stateFile, nameDocumet,setRefresh,ref
         
       }
       
-      // setStateFile({...stateFile,[nameDocumet]:"EN PROCESO"})
     }
   };
 

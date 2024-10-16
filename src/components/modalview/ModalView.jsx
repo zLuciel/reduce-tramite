@@ -8,19 +8,18 @@ import { notifications } from "@mantine/notifications";
 function ModalView({ detalle }) {
   const [opened, { open, close }] = useDisclosure(false);
 
-  const handleDetail = async ()=>{
-
-    close()
-    
-
-  }
+  const handleDetail = async () => {
+    close();
+  };
   return (
     <>
       <Modal opened={opened} onClose={close} title="Detalle del Observado">
-       <p>{detalle} </p>
+        <p>{detalle} </p>
       </Modal>
 
-      <Button className="self-center" onClick={open}>Ver detalle</Button>
+      <Button className="self-center" onClick={open}>
+        Ver detalle
+      </Button>
     </>
   );
 }

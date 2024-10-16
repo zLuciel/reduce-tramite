@@ -1,5 +1,4 @@
 "use client";
-import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import tokenLoginUser from "./token";
 import { useProduct } from "@/provider/ProviderContext";
@@ -32,7 +31,7 @@ const withAuth = (WrappedComponent, requiredRole) => {
       setAllUser(allUsers);
       setUser(userData);
 
-      // Controlador de roles
+      
       if (requiredRole && userData.roles[0] !== requiredRole) {
         throw new Error("Unauthorized role");
       }
@@ -40,7 +39,6 @@ const withAuth = (WrappedComponent, requiredRole) => {
       return userData;
     };
 
-    // Usar React Query para manejar la autenticación
     const { data: userData, error, isLoading } = useQuery({
       queryKey: ["userData"], // Clave única para la consulta
       queryFn: () => {
@@ -53,23 +51,22 @@ const withAuth = (WrappedComponent, requiredRole) => {
       retry: false, // No reintentar en caso de error
       onError: (error) => {
         console.error("Error during authentication:", error);
-        localStorage.removeItem("token"); // Remover el token en caso de error
-        router.push("/"); // Redirigir a la página de inicio
+        localStorage.removeItem("token"); 
+        router.push("/"); 
       },
     });
 
-    // Manejar el estado de carga
+
     if (isLoading) {
-      return <LoadingSJL />; // Mostrar cargando mientras se verifica la autenticación
+      return <LoadingSJL />;
     }
 
     // Si hay un error, redirigir al usuario
     if (error) {
       router.push("/");
-      // return null; // Puedes mostrar un mensaje de error si lo deseas
     }
 
-    return <WrappedComponent {...props} />; // Si está autenticado, renderiza el componente envuelto
+    return <WrappedComponent {...props} />; 
   };
 
   ComponentWithAuth.displayName = `WithAuth(${
