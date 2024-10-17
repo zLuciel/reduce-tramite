@@ -19,7 +19,7 @@ const Page = ({ params }) => {
   const [ObserFile, setObserFile] = useState(false);
   const [userOne, setUserOne] = useState([]);
   const [loading, setLoading] = useState(true);
-
+  
   const searchParams = useSearchParams();
   const router = useRouter();
   const idSection = params.slug[1];

@@ -19,7 +19,7 @@ const IntestadaDocument = ({
 }) => {
   const { setDocumentUser } = useProduct();
 
-  const url = "https://xynydxu4qi.us-east-2.awsapprunner.com/api/files/pdf";
+  const url = `${process.env.NEXT_PUBLIC_URL}/files/pdf`;
 
   const handleChange = async (id, value) => {
     await dataApi.updateStatus(token, value, id, null, true);

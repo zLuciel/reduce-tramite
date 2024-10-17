@@ -1,7 +1,7 @@
 // app/actions.js
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import messageRedux from "./message";
-const url = "https://xynydxu4qi.us-east-2.awsapprunner.com";
+const url = process.env.NEXT_PUBLIC_URL;
 
 export const fetchhAllNewTables = createAsyncThunk(
   "dashboard/fetchhAllNewTables", // Tipo de acción
@@ -9,7 +9,7 @@ export const fetchhAllNewTables = createAsyncThunk(
     try {
      if(message) messageRedux.initialMessageTable()
       const resUser = await fetch(
-        `${url}/api/process-status/completed-users/${idSection}`,
+        `${url}/process-status/completed-users/${idSection}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -42,7 +42,7 @@ export const getAllPeding = createAsyncThunk(
     try {
       if(message) messageRedux.initialMessageTable()
       const resUser = await fetch(
-        `${url}/api/process-status/corrected/${idSection}`,
+        `${url}/process-status/corrected/${idSection}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -74,7 +74,7 @@ export const getAllPedingUnresolved = createAsyncThunk(
     try {
       if(message) messageRedux.initialMessageTable()
       const resUser = await fetch(
-        `${url}/api/process-status/unresolved-documents/${idSection}`,
+        `${url}/process-status/unresolved-documents/${idSection}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -108,7 +108,7 @@ export const getAllPlataform = createAsyncThunk(
     try {
       messageRedux.initialMessageTable();
       const resUser = await fetch(
-        `${url}/api/user/roles/platform-operators`,
+        `${url}/user/roles/platform-operators`,
         {
           headers: {
             "Content-Type": "application/json",
