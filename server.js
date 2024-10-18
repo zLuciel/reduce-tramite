@@ -1,8 +1,11 @@
+require('dotenv').config({ path: '.env.local' });
 const { createServer } = require('http');
 const { parse } = require('url');
 const next = require('next');
 
 const dev = process.env.NODE_ENV !== 'production';
+console.log(process.env.NODE_ENV);
+
 const port = process.env.PORT || 3000;
 const app = next({ dev });
 const handle = app.getRequestHandler();
