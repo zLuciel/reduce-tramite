@@ -35,7 +35,6 @@ const Requisito = ({ dataDocument, inestadaReq }) => {
         idDocument
       );
       //estados a confirmar
-      
 
       const incomplete = res?.status !== "INCOMPLETO";
       const completo = res?.status !== "COMPLETO";
@@ -53,9 +52,9 @@ const Requisito = ({ dataDocument, inestadaReq }) => {
   const nextStep = async () => {
     //asegurate que llene el formulario
     if (active === 1) {
-     const res = await dataApi.getProcessFile(user.token, idDocument);
-     const resProcees =  await dataApi.startTramiteDocument(user.token, res.id);
-     
+      const res = await dataApi.getProcessFile(user.token, idDocument);
+      const resProcees = await dataApi.startTramiteDocument(user.token, res.id);
+
       setActive(3);
       return;
     }
@@ -83,9 +82,8 @@ const Requisito = ({ dataDocument, inestadaReq }) => {
               <div className="text-sm flex flex-col gap-2">
                 <p>* TODO DOCUMENTO DE SUNARP TIENE UNA VIGENCIA DE 3 MESES.</p>
                 <p>
-                  * SI LA CONDICION DE LA PROPIEDAD ES {`"POSESIONARIO"`} NO SE
-                  PODRA <br />
-                  REALIZAR LA INSCRIPCION DE LA SUCESION INTESTADA.
+                  * SI LA CONDICIÓN DE LA PROPIEDAD ES {`"POSESIONARIO"`}, NO SE
+                  PODRÁ <br /> REALIZAR LA INSCRIPCIÓN DE LA SUCESIÓN INTESTADA.
                 </p>
               </div>
             )}

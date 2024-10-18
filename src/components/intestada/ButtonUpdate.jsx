@@ -23,7 +23,7 @@ const ButtonUpdate = ({
   setMemoryProcess,
   updateVery,
 }) => {
-  const url = "https://xynydxu4qi.us-east-2.awsapprunner.com/api/files/pdf";
+  const url = `${process.env.NEXT_PUBLIC_URL}/files/pdf`;
   const { user } = useProduct();
   const { validatePdf, error } = usePdfValidator(10);
 

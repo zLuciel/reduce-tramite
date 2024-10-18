@@ -18,14 +18,15 @@ const withAuth = (WrappedComponent, requiredRole) => {
     const fetchUserData = async (token) => {
       
       const userData = await tokenLoginUser(token);
-
+    
+       
       if (!userData || userData.message === "Unauthorized") {
         throw new Error("Unauthorized");
       }
 
       const allUsers = await dataApi.getAllUser(token);
       const document = await dataApi.sectionDocument(token);
-
+       
       dispatch(getAllDocumentsSection({ token }));
       setDocumentSection(document);
       setAllUser(allUsers);
@@ -61,8 +62,11 @@ const withAuth = (WrappedComponent, requiredRole) => {
       return <LoadingSJL />;
     }
 
+    
+    
     // Si hay un error, redirigir al usuario
     if (error) {
+      
       router.push("/");
     }
 

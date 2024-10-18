@@ -57,7 +57,7 @@ export const Login = () => {
       district: (value) =>
         value.trim() ? null : "El distrito es obligatorio",
       password: (value) => {
-        if (value.length > 5) return "La contraseña debe tener al maximo 5 caracteres";
+        if (value.length > 5) return "La contraseña debe tener máximo 5 caracteres";
         return null;
       },
     },

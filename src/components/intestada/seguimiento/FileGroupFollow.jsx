@@ -30,7 +30,7 @@ const FileGroupFollow = ({
   const { user } = useProduct();
   const { validatePdf, error } = usePdfValidator(10);
   const [pdfLink, setPdfLink] = useState(null);
-  const url = "https://xynydxu4qi.us-east-2.awsapprunner.com/api/files/pdf";
+  const url = `${process.env.NEXT_PUBLIC_URL}/files/pdf`;
 
   const ValueComponent = ({ value, onRemove }) => {
     if (value === null) {

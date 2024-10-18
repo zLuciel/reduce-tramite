@@ -1,6 +1,6 @@
 async function tokenLoginUser(token) {
   const url =
-    "https://xynydxu4qi.us-east-2.awsapprunner.com/api/auth/check-status";
+    `${process.env.NEXT_PUBLIC_URL}/auth/check-status`;
   const userToken = await fetch(url, {
     method: "GET",
     headers: {

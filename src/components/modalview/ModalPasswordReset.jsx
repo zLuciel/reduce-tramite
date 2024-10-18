@@ -112,7 +112,7 @@ const ModalPasswordReset = () => {
       </Modal>
 
       <p className="text-xs cursor-pointer-login" onClick={open}>
-        Olvide mi contraseña
+        Olvidé mi contraseña
       </p>
     </>
   );

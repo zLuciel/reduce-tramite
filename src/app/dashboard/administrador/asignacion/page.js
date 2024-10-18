@@ -55,4 +55,4 @@ const Page = () => {
   );
 };
 
-export default withAuth(Page, "administrator");
+export default withAuth(Page,"administrator");

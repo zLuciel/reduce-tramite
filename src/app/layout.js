@@ -1,7 +1,6 @@
 import localFont from "next/font/local";
 import "./globals.css";
-import { Providers, ProvidersMantine } from "@/mantine/Provider";
-import Header from "@/components/header/Header";
+import { Providers} from "@/mantine/Provider";
 import { ProductProvider } from "@/provider/ProviderContext";
 
 const geistSans = localFont({
@@ -16,7 +15,7 @@ const geistMono = localFont({
 });
 
 export const metadata = {
-  title: "Gestion de citas munisjl",
+  title: "Modulos de citas",
   description:
     "Plataforma de gestión de citas municipales que facilita el agendamiento de trámites en línea, ahorrando tiempo y evitando desplazamientos. Realiza tus trámites de manera rápida y eficiente desde cualquier lugar.",
     keywords:
@@ -33,7 +32,7 @@ export const metadata = {
   language: "es",
   hreflang: "es-pe",
   icons: {
-    icon: "/favicon.ico",
+    icon: "/favicon.icon",
   },
   robots: "index, follow", 
   og: {

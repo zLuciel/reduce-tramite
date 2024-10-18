@@ -204,7 +204,7 @@ const FormLogin = ({ form }) => {
             </div>
           )}
           <Button type="submit" fullWidth>
-            Iniciar sesion
+            Iniciar sesión
           </Button>
         </Group>
       </form>
