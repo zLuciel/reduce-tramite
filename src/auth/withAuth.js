@@ -66,7 +66,6 @@ const withAuth = (WrappedComponent, requiredRole) => {
     
     // Si hay un error, redirigir al usuario
     if (error) {
-      
       router.push("/");
     }
 
